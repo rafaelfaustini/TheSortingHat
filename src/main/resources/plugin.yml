@@ -1,0 +1,12 @@
+name: TheSortingHat
+version: ${project.version}
+main: me.rafaelfaustini.thesortinghat.TheSortingHat
+authors: [RafaelFaustini]
+description: Based on Harry Potter's sorting hat
+website: www.rafaelfaustini.com.br
+
+commands:
+  sort:
+    description: Sorts from elements and executes commands from config
+    aliases: [sorthat,sortinghat,chapeuseletor,seletor,escolher,choose]
+
