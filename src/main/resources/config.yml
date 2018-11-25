@@ -1,15 +1,23 @@
 Sorted: 'Congratulations! You have been sorted into {choice}'
 NoPermission: 'You do not have permission to execute this command'
 Choices:
-  1:
-    name: "Gryffindor"
-    command: "pex user {player} group add {choice}"
-  2:
-    name: "Hufflepuff"
-    command: "pex user {player} group add {choice}"
-  3:
-    name: "Slytherin"
-    command: "pex user {player} group add {choice}"
-  4:
-    name: "Ravenclaw"
-    command: "pex user {player} group add {choice}"
+  '1':
+    name: 'Gryffindor'
+    commands:
+      - 'pex user {player} group add {choice}'
+      - 'say {player} have been sorted into {choice}'
+  '2':
+    name: 'Hufflepuff'
+    commands:
+      - 'pex user {player} group add {choice}'
+      - 'say {player} have been sorted into {choice}'
+  '3':
+    name: 'Slytherin'
+    commands:
+      - 'pex user {player} group add {choice}'
+      - 'say {player} have been sorted into {choice}'
+  '4':
+    name: 'Ravenclaw'
+    commands:
+      - 'pex user {player} group add {choice}'
+      - 'say {player} have been sorted into {choice}'

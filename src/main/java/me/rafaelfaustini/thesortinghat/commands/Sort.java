@@ -53,15 +53,23 @@ public class Sort implements CommandExecutor {
             int tmp = number+1;
 
             String name = plugin.getConfig().getString("Choices."+tmp+".name");
-            String comando = plugin.getConfig().getString("Choices."+tmp+".command");
-            comando = filter_keywords(comando,player,name);
+
             String temp = plugin.getConfig().getString("Sorted");
 
             temp = "&6"+filter_keywords(temp,player,name);
             temp = ChatColor.translateAlternateColorCodes('&', temp);
 
             player.sendMessage(temp);
-            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), comando);
+
+
+            List comando = plugin.getConfig().getStringList("Choices."+tmp+".commands");
+            int i;
+            for(i=0;i<comando.size();i++) {
+
+                String commandtmp = filter_keywords(comando.get(i).toString(), player, name);
+                plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), commandtmp);
+            }
+
             plugin.getConfig().set("SortedPlayers."+player.getName()+".choice", name);
 
             plugin.saveConfig();
