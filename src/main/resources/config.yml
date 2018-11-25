@@ -1,16 +1,15 @@
-Sorted: 'Congratulations! You have been sorted into '
-Houses:
-- 'Gryffindor'
-- 'Hufflepuff'
-- 'Ravenclaw'
-- 'Slytherin'
-
-# It's recommended that you put in the commands, the command to add the player to the house permission#
-#Example: pex user %player% group add Gryffindor | {player} will be automatically replaced to the sorted player's name#
-
-Commands:
-- "say {player} have been sorted into Gryffindor" # Change the command to the permission one refering to Gryffindor
-- "say {player} have been sorted into Hufflepuff" # Change the command to the permission one refering to HufflePuff
-- "say {player} have been sorted into Ravenclaw" # Change the command to the permission one refering to Ravenclaw
-- "say {player} have been sorted into Slytherin" # Change the command to the permission one refering to Slytherin
-
+Sorted: 'Congratulations! You have been sorted into {house}'
+NoPermission: 'You do not have permission to execute this command'
+Choices:
+  1:
+    name: "Gryffindor"
+    command: "pex user {player} group add {house}"
+  2:
+    name: "Hufflepuff"
+    command: "pex user {player} group add {house}"
+  3:
+    name: "Slytherin"
+    command: "pex user {player} group add {house}"
+  4:
+    name: "Ravenclaw"
+    command: "pex user {player} group add {house}"

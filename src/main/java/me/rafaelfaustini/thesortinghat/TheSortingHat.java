@@ -1,5 +1,4 @@
 package me.rafaelfaustini.thesortinghat;
-
 import me.rafaelfaustini.thesortinghat.commands.Sort;
 import org.bukkit.plugin.java.JavaPlugin;
 
