@@ -16,6 +16,7 @@ public final class TheSortingHat extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        System.out.println("[TheSortingHat] Plugin disabled");
         // Plugin shutdown logic
     }
 }

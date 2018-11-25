@@ -15,7 +15,7 @@ public class Sort implements CommandExecutor {
 
     public String filter_keywords(String str, Player p, String h) {
         str = str.replace("{player}", p.getName());
-        str = str.replace("{house}", h);
+        str = str.replace("{choice}", h);
         return str;
     }
     public static boolean isNullorZero(Integer i){
@@ -30,6 +30,11 @@ public class Sort implements CommandExecutor {
 
             Player player = (Player) sender;
 
+            if(plugin.getConfig().getString("SortedPlayers."+player.getName()+".choice") != null){
+                player.sendMessage(ChatColor.RED+"You have already been sorted !");
+                return true;
+            }
+
             if(!player.hasPermission("thesortinghat.sort") || (!player.isOp() && !player.hasPermission("*") && player.hasPermission("thesortinghat.sorted") )) {
                 String texto = plugin.getConfig().getString("NoPermission");
                 player.sendMessage(ChatColor.RED+texto);
@@ -38,7 +43,7 @@ public class Sort implements CommandExecutor {
             List<String> lista = plugin.getConfig().getStringList("Houses");
             Random r = new Random();
             int number_choices = plugin.getConfig().getConfigurationSection("Choices").getKeys(false).size();
-            if(isNullorZero(number_choices) ){
+            if(number_choices==0){
                 player.sendMessage("There was an error while running this command");
                 return true;
             }
@@ -56,8 +61,10 @@ public class Sort implements CommandExecutor {
             temp = ChatColor.translateAlternateColorCodes('&', temp);
 
             player.sendMessage(temp);
-            player.sendMessage(comando);
             plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), comando);
+            plugin.getConfig().set("SortedPlayers."+player.getName()+".choice", name);
+
+            plugin.saveConfig();
 
         }
         return true;

@@ -1,15 +1,15 @@
-Sorted: 'Congratulations! You have been sorted into {house}'
+Sorted: 'Congratulations! You have been sorted into {choice}'
 NoPermission: 'You do not have permission to execute this command'
 Choices:
   1:
     name: "Gryffindor"
-    command: "pex user {player} group add {house}"
+    command: "pex user {player} group add {choice}"
   2:
     name: "Hufflepuff"
-    command: "pex user {player} group add {house}"
+    command: "pex user {player} group add {choice}"
   3:
     name: "Slytherin"
-    command: "pex user {player} group add {house}"
+    command: "pex user {player} group add {choice}"
   4:
     name: "Ravenclaw"
-    command: "pex user {player} group add {house}"
+    command: "pex user {player} group add {choice}"
