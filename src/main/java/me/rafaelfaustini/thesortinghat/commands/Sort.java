@@ -40,7 +40,6 @@ public class Sort implements CommandExecutor {
                 player.sendMessage(ChatColor.RED+texto);
                 return true;
             }
-            List<String> lista = plugin.getConfig().getStringList("Houses");
             Random r = new Random();
             int number_choices = plugin.getConfig().getConfigurationSection("Choices").getKeys(false).size();
             if(number_choices==0){

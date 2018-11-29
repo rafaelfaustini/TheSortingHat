@@ -1,5 +1,6 @@
 package me.rafaelfaustini.thesortinghat;
 import me.rafaelfaustini.thesortinghat.commands.Sort;
+import me.rafaelfaustini.thesortinghat.commands.Sortinghat;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TheSortingHat extends JavaPlugin {
@@ -11,6 +12,7 @@ public final class TheSortingHat extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         getCommand("sort").setExecutor(new Sort());
+        getCommand("sortinghat").setExecutor(new Sortinghat());
 
     }
 
@@ -20,3 +22,5 @@ public final class TheSortingHat extends JavaPlugin {
         // Plugin shutdown logic
     }
 }
+
+

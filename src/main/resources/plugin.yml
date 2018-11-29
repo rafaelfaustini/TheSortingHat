@@ -8,5 +8,7 @@ website: www.rafaelfaustini.com.br
 commands:
   sort:
     description: Sorts from elements and executes commands from config
-    aliases: [sorthat,sortinghat,chapeuseletor,seletor,escolher,choose]
-
+    aliases: [sortear,escolher,choose,s]
+  sortinghat:
+    description: TheSortingHat master command
+    aliases: [sh]
